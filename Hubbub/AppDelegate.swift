@@ -7,15 +7,21 @@
 //
 
 import UIKit
-
+import GoogleMaps
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+      /**
+        *@discussion Its Google API key 
+        *you must register your app project on the Google API Console and get a Google API key which you can add to your app
+        */
+        GMSServices.provideAPIKey("AIzaSyAoccvPG7kCn0jVYdtclP4pVSe4lzQrZdA")
+        let navigationBarAppearace = UINavigationBar.appearance()
+        navigationBarAppearace.barTintColor = UIColor.rgb(red: 33,green: 202,blue: 153)
+        UIApplication.shared.statusBarStyle = .lightContent
         return true
     }
 
@@ -41,6 +47,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
 }
-
+extension UIColor {
+    static func rgb(red: CGFloat, green: CGFloat, blue: CGFloat) -> UIColor {
+        return UIColor(red: red/255, green: green/255, blue: blue/255, alpha: 1)
+    }
+}
