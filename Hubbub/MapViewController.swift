@@ -12,10 +12,10 @@ class MapViewController: UIViewController,GMSMapViewDelegate{
     @IBOutlet var map_View:GMSMapView?
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.title = "MyHUB"
+        self.title = "Indian_HUB"
         map_View?.isMyLocationEnabled = true
         map_View?.settings.myLocationButton = true
-        navigation_title()
+//        navigation_title()
     }
     /**
      *@discussion method to display image as navigation titleView
